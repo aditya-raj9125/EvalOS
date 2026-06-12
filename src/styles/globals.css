@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #0F172A;
+  --primary: #2563EB;
+  --primary-foreground: #ffffff;
+  --surface: #F8FAFC;
+  --surface-100: #F1F5F9;
+  --border: #E2E8F0;
+  --ring: #2563EB;
+  --radius: 8px;
+  --success: #16A34A;
+  --danger: #E11D48;
+  --warning: #D97706;
+  --muted: #64748B;
+}
+
+.dark {
+  --background: #030712;
+  --foreground: #F8FAFC;
+  --primary: #3B82F6;
+  --primary-foreground: #ffffff;
+  --surface: #0D1117;
+  --surface-100: #161B22;
+  --border: #21262D;
+  --ring: #3B82F6;
+  --success: #22C55E;
+  --danger: #F43F5E;
+  --warning: #F59E0B;
+  --muted: #94A3B8;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium text-neutral-700 transition-all duration-200 ease-out hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-neutral-300 dark:hover:bg-white/10;
+  }
+
+  .card {
+    @apply rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-white/10 dark:bg-white/5;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition-all duration-150 ease-out focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-white/20 dark:bg-white/5 dark:text-neutral-100;
+  }
+
+  /* Glass card for landing page elements */
+  .glass-card {
+    @apply rounded-2xl border border-white/20 bg-white/80 shadow-xl shadow-black/5 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-black/30;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-violet-500 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  /* Glow button */
+  .btn-glow {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-primary-500/30 transition-all duration-200 hover:shadow-xl hover:shadow-primary-500/40 hover:scale-[1.02] focus-visible:outline-none;
+  }
+}
+
+/* ============ ANIMATIONS ============ */
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Floating card */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(-50%) translateY(-50%); }
+  50% { transform: translateY(-10px) translateX(-50%) translateY(-50%); }
+}
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Mark appear */
+@keyframes mark-appear {
+  from { opacity: 0; transform: scale(0.3) rotate(-20deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+.mark-appear {
+  animation: mark-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #60a5fa);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Grid pattern */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Gradient mesh background */
+.mesh-gradient {
+  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(37, 99, 235, 0.15), transparent),
+              radial-gradient(ellipse 60% 60% at 80% 40%, rgba(124, 58, 237, 0.08), transparent),
+              radial-gradient(ellipse 60% 60% at 20% 60%, rgba(6, 182, 212, 0.06), transparent);
+}
+
+/* Glow orb */
+.glow-orb {
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+/* Gradient border trick */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(135deg, #2563eb, #7c3aed, #0891b2) border-box;
+  border: 1.5px solid transparent;
+}
+
+/* Feature card hover glow */
+.feature-card:hover::before {
+  opacity: 1;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(37,99,235,0.06), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* Typing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Badge glow */
+.badge-glow {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Step connector line */
+.step-line::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, #2563eb, transparent);
+  transform: translateX(-50%);
+}
