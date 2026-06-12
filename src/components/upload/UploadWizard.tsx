@@ -111,7 +111,7 @@ export function UploadWizard() {
         <ol role="list" className="flex items-center justify-between">
           {steps.map((s, idx) => (
             <li key={s.name} className={`relative flex items-center ${idx !== steps.length - 1 ? "w-full" : ""}`}>
-              <div className="flex items-center">
+              <div className="flex items-center shrink-0">
                 <span
                   className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ring-2 ${
                     s.id === step
@@ -129,10 +129,9 @@ export function UploadWizard() {
               </div>
               {idx !== steps.length - 1 && (
                 <div
-                  className={`absolute top-4 left-8 right-2 h-0.5 hidden md:block ${
+                  className={`flex-1 mx-4 h-0.5 hidden md:block ${
                     s.id < step ? "bg-success-600" : "bg-neutral-200 dark:bg-neutral-800"
                   }`}
-                  style={{ width: "calc(100% - 3.5rem)" }}
                 />
               )}
             </li>
