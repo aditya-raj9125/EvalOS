@@ -1,0 +1,108 @@
+version: "3.9"
+
+services:
+  # ─── PostgreSQL Database ─────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: evalai_postgres
+    environment:
+      POSTGRES_DB: evalai
+      POSTGRES_USER: evalai
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-evalai_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evalai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ─── Redis Cache & Message Broker ────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: evalai_redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  # ─── FastAPI Backend ──────────────────────────────────────────────────────────
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: evalai_api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./apps/api:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ./apps/api/.env
+    restart: unless-stopped
+
+  # ─── Celery Worker ────────────────────────────────────────────────────────────
+  celery_worker:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: evalai_celery_worker
+    command: celery -A celery_worker worker --concurrency=4 --queues=high_priority,default --loglevel=info
+    volumes:
+      - ./apps/api:/app
+    depends_on:
+      - api
+      - redis
+      - postgres
+    env_file:
+      - ./apps/api/.env
+    restart: unless-stopped
+
+  # ─── Celery Flower Monitoring ─────────────────────────────────────────────────
+  flower:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: evalai_flower
+    command: celery -A celery_worker flower --port=5555
+    ports:
+      - "5555:5555"
+    depends_on:
+      - celery_worker
+    env_file:
+      - ./apps/api/.env
+    restart: unless-stopped
+
+  # ─── Next.js Frontend (optional in dev — use `npm run dev` locally instead) ──
+  web:
+    build:
+      context: ./apps/web
+    container_name: evalai_web
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./apps/web/.env.local
+    depends_on:
+      - api
+    profiles:
+      - full  # Only starts with: docker compose --profile full up
+
+# ─── Named Volumes ─────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+  redis_data:
