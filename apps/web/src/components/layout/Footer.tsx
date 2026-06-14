@@ -1,112 +1,159 @@
 import Link from "next/link";
-import { Bot } from "lucide-react";
+import { ArrowRight, Feather } from "lucide-react";
 import { APP_NAME } from "@/lib/constants";
 
 const productLinks = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
+  { label: "Schools - Eval AI", href: "#features" },
+  { label: "Teachers - Eval App", href: "#how-it-works" },
+  { label: "Developers - API", href: "/pricing" },
 ];
 
 const resourceLinks = [
   { label: "Documentation", href: "#" },
-  { label: "API Reference", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "Changelog", href: "#" },
+  { label: "Demo Playground", href: "#" },
+  { label: "Admin Dashboard", href: "#" },
+  { label: "Eval API Skill", href: "#" },
+  { label: "Eval App Skill", href: "#" },
 ];
 
-const contactLinks = [
-  { label: "Contact Support", href: "mailto:support@evalai.in" },
-  { label: "Twitter / X", href: "https://twitter.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+const legalLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms & Conditions", href: "#" },
+  { label: "Security", href: "#" },
+];
+
+const companyLinks = [
+  { label: "Support", href: "mailto:support@evalai.in" },
+  { label: "FAQ", href: "#" },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/8 bg-neutral-950">
-      {/* Top gradient accent */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+    <footer className="relative bg-gradient-to-b from-white to-primary-50/50 pt-20 pb-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Floating White Card */}
+        <div className="relative overflow-hidden rounded-[2rem] bg-white p-12 shadow-xl ring-1 ring-neutral-200 lg:p-16">
+          
+          {/* Giant watermark */}
+          <div className="pointer-events-none absolute -bottom-16 -left-16 flex items-center opacity-[0.03] grayscale">
+            <Feather className="h-64 w-64 text-neutral-900" />
+            <span className="text-[12rem] font-bold tracking-tighter text-neutral-900">
+              EvalAI
+            </span>
+          </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 shadow-md shadow-blue-500/20 transition-transform group-hover:scale-105">
-                <Bot className="h-4 w-4 text-white" />
+          <div className="relative grid grid-cols-1 gap-12 lg:grid-cols-12">
+            
+            {/* Left side: CTA */}
+            <div className="lg:col-span-4 flex flex-col justify-between">
+              <div>
+                <h3 className="mb-4 text-3xl font-medium tracking-tight text-[#222222]">
+                  When Teachers Need a Break,
+                  <br />
+                  <span className="text-primary-600">Eval AI Steps In!</span>
+                </h3>
+                <Link
+                  href="/dashboard"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-primary-600"
+                >
+                  Try Now
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
-              <span className="font-bold text-white">{APP_NAME}</span>
-            </Link>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500">
-              AI-powered exam evaluation for teachers and institutions. Fast, fair, and accurate.
-            </p>
-            {/* Build badge */}
-            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-neutral-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Free during beta
             </div>
-          </div>
 
-          {/* Product */}
-          <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-neutral-400">Product</h3>
-            <ul className="space-y-3">
-              {productLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href as any}
-                    className="text-sm text-neutral-500 transition-colors duration-150 hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Right side: Links */}
+            <div className="lg:col-span-8 grid grid-cols-2 gap-8 sm:grid-cols-4">
+              {/* Column 1 */}
+              <div>
+                <h4 className="mb-4 text-sm font-bold text-[#222222]">Products</h4>
+                <ul className="space-y-3">
+                  {productLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href as any} className="text-sm text-neutral-500 hover:text-primary-600">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Resources */}
-          <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-neutral-400">Resources</h3>
-            <ul className="space-y-3">
-              {resourceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href as any}
-                    className="text-sm text-neutral-500 transition-colors duration-150 hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+              {/* Column 2 */}
+              <div>
+                <h4 className="mb-4 text-sm font-bold text-[#222222]">Resources</h4>
+                <ul className="space-y-3">
+                  {resourceLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href as any} className="text-sm text-neutral-500 hover:text-primary-600">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-neutral-400">Connect</h3>
-            <ul className="space-y-3">
-              {contactLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href as any}
-                    className="text-sm text-neutral-500 transition-colors duration-150 hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              {/* Column 3 */}
+              <div>
+                <h4 className="mb-4 text-sm font-bold text-[#222222]">Legal / Security</h4>
+                <ul className="space-y-3">
+                  {legalLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href as any} className="text-sm text-neutral-500 hover:text-primary-600">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Column 4 */}
+              <div className="flex flex-col justify-between">
+                <div>
+                  <h4 className="mb-4 text-sm font-bold text-[#222222]">Company</h4>
+                  <ul className="space-y-3">
+                    {companyLinks.map((link) => (
+                      <li key={link.label}>
+                        <Link href={link.href as any} className="text-sm text-neutral-500 hover:text-primary-600">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Social icons */}
+                <div className="mt-8 flex gap-4">
+                  <a href="#" className="text-neutral-900 transition-colors hover:text-primary-600">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-neutral-900 transition-colors hover:text-primary-600">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-neutral-900 transition-colors hover:text-primary-600">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/8 pt-7 sm:flex-row">
-          <p className="text-sm text-neutral-600">
-            © {new Date().getFullYear()} {APP_NAME}. All rights reserved.
-          </p>
-          <p className="text-sm text-neutral-600">
-            Built for CBSE · IIT-JEE · Universities and beyond
+        {/* Copyright */}
+        <div className="mt-8 text-center">
+          <p className="text-xs text-neutral-500">
+            Copyright © {new Date().getFullYear()} {APP_NAME} Inc. All rights reserved
           </p>
         </div>
       </div>

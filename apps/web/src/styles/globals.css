@@ -6,13 +6,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0F172A;
-  --primary: #2563EB;
+  --foreground: #020617; /* Deeper black */
+  --primary: #14b8a6; /* Teal 500 */
   --primary-foreground: #ffffff;
   --surface: #F8FAFC;
   --surface-100: #F1F5F9;
   --border: #E2E8F0;
-  --ring: #2563EB;
+  --ring: #14b8a6;
   --radius: 8px;
   --success: #16A34A;
   --danger: #E11D48;
@@ -21,14 +21,14 @@
 }
 
 .dark {
-  --background: #030712;
+  --background: #020617;
   --foreground: #F8FAFC;
-  --primary: #3B82F6;
+  --primary: #14b8a6;
   --primary-foreground: #ffffff;
   --surface: #0D1117;
   --surface-100: #161B22;
   --border: #21262D;
-  --ring: #3B82F6;
+  --ring: #14b8a6;
   --success: #22C55E;
   --danger: #F43F5E;
   --warning: #F59E0B;
@@ -177,9 +177,9 @@ html {
 
 /* Gradient mesh background */
 .mesh-gradient {
-  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(37, 99, 235, 0.15), transparent),
-              radial-gradient(ellipse 60% 60% at 80% 40%, rgba(124, 58, 237, 0.08), transparent),
-              radial-gradient(ellipse 60% 60% at 20% 60%, rgba(6, 182, 212, 0.06), transparent);
+  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(20, 184, 166, 0.15), transparent),
+              radial-gradient(ellipse 60% 60% at 80% 40%, rgba(52, 211, 153, 0.1), transparent),
+              radial-gradient(ellipse 60% 60% at 20% 60%, rgba(15, 118, 110, 0.08), transparent);
 }
 
 /* Glow orb */
