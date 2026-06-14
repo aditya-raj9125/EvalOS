@@ -11,18 +11,20 @@ from passlib.context import CryptContext
 
 from app.core.config import settings
 
-# bcrypt password context
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+import bcrypt
 
 def hash_password(plain_password: str) -> str:
     """Hash a plain text password using bcrypt."""
-    return pwd_context.hash(plain_password)
+    salt = bcrypt.gensalt()
+    pwd_bytes = plain_password.encode('utf-8')
+    return bcrypt.hashpw(pwd_bytes, salt).decode('ascii')
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a plain text password against its bcrypt hash."""
-    return pwd_context.verify(plain_password, hashed_password)
+    pwd_bytes = plain_password.encode('utf-8')
+    hash_bytes = hashed_password.encode('ascii')
+    return bcrypt.checkpw(pwd_bytes, hash_bytes)
 
 
 def create_access_token(user_id: str, expires_delta: timedelta | None = None) -> str:

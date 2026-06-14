@@ -20,12 +20,25 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const { setAuth } = useAuthStore();
 
+  const customResolver = async (data: LoginFormData) => {
+    const result = loginSchema.safeParse(data);
+    if (result.success) {
+      return { values: result.data, errors: {} };
+    }
+    const errors = result.error.issues.reduce((acc: any, curr) => {
+      const path = curr.path[0] || 'root';
+      acc[path] = { message: curr.message, type: curr.code };
+      return acc;
+    }, {});
+    return { values: {}, errors };
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+    resolver: customResolver as any,
   });
 
   const onSubmit = async (data: LoginFormData) => {

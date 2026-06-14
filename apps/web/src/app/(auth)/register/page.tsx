@@ -21,6 +21,19 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const { setAuth } = useAuthStore();
 
+  const customResolver = async (data: RegisterFormData) => {
+    const result = registerSchema.safeParse(data);
+    if (result.success) {
+      return { values: result.data, errors: {} };
+    }
+    const errors = result.error.issues.reduce((acc: any, curr) => {
+      const path = curr.path[0] || 'root';
+      acc[path] = { message: curr.message, type: curr.code };
+      return acc;
+    }, {});
+    return { values: {}, errors };
+  };
+
   const {
     register,
     handleSubmit,
@@ -28,7 +41,7 @@ export default function RegisterPage() {
     watch,
     formState: { errors },
   } = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+    resolver: customResolver as any,
     defaultValues: { role: "teacher" },
   });
 
