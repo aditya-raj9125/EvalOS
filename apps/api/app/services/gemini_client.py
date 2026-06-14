@@ -35,7 +35,7 @@ class GeminiClient:
     def __init__(self):
         genai.configure(api_key=settings.GEMINI_API_KEY)
         self.model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
+            model_name="gemini-flash-latest",
             generation_config=genai.types.GenerationConfig(
                 temperature=0.1,
                 top_p=0.95,

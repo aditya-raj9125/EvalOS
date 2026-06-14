@@ -1,0 +1,144 @@
+[
+  {
+    "q_no": "1",
+    "question_text": "State Ohm's law. Write its mathematical form.",
+    "question_type": "short_answer",
+    "max_marks": 1,
+    "expected_answer": "Ohm's law states that the current through a conductor is directly proportional to the potential difference across it, provided temperature remains constant. Mathematical form: V = IR (or I = V/R).",
+    "marking_notes": "Accept equivalent form I = V/R.",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "directly proportional",
+      "potential difference",
+      "temperature remains constant",
+      "V = IR"
+    ]
+  },
+  {
+    "q_no": "2",
+    "question_text": "What is the SI unit of electric power?",
+    "question_type": "short_answer",
+    "max_marks": 1,
+    "expected_answer": "SI unit of electric power: watt (W).",
+    "marking_notes": "Award 1 mark for correct unit.",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "watt",
+      "W"
+    ]
+  },
+  {
+    "q_no": "3",
+    "question_text": "Name the device used to protect an electric circuit from overcurrent.",
+    "question_type": "short_answer",
+    "max_marks": 1,
+    "expected_answer": "Device used to protect an electric circuit from overcurrent: fuse.",
+    "marking_notes": "Accept MCB if stated as circuit protection device.",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "fuse",
+      "MCB"
+    ]
+  },
+  {
+    "q_no": "4",
+    "question_text": "What kind of image is formed by a plane mirror?",
+    "question_type": "short_answer",
+    "max_marks": 1,
+    "expected_answer": "Image formed by a plane mirror is virtual, erect and laterally inverted.",
+    "marking_notes": "Any one correct property for 1 mark; complete statement acceptable.",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "virtual",
+      "erect",
+      "laterally inverted"
+    ]
+  },
+  {
+    "q_no": "5",
+    "question_text": "Why are copper and aluminium wires commonly used in electric wiring? Give two reasons.",
+    "question_type": "short_answer",
+    "max_marks": 2,
+    "expected_answer": "Any two reasons:\n- Good electrical conductivity\n- Low resistance / low power loss\n- Ductile and can be drawn into wires",
+    "marking_notes": "Award 1 mark for each correct reason.",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "conductivity",
+      "low resistance",
+      "ductile"
+    ]
+  },
+  {
+    "q_no": "6",
+    "question_text": "A bulb rated 60 W, 220 V is connected to a 220 V supply. Calculate the current drawn by the bulb.",
+    "question_type": "numerical",
+    "max_marks": 2,
+    "expected_answer": "Use P = VI.\nI = P/V = 60/220 = 0.2727 A \u2248 0.27 A.",
+    "marking_notes": "Step marking: formula (1), correct substitution/calculation (1).",
+    "diagram_checklist": null,
+    "keyword_list": null
+  },
+  {
+    "q_no": "7",
+    "question_text": "Draw a ray diagram to show the formation of image by a concave mirror when the object is placed beyond the centre of curvature. Mention one property of the image formed.",
+    "question_type": "diagram",
+    "max_marks": 2,
+    "expected_answer": "Ray diagram should show object beyond C, image between C and F. One property of image: real, inverted and diminished.",
+    "marking_notes": "Marking: correct ray diagram (1), one correct property (1).",
+    "diagram_checklist": [
+      "concave mirror shown with reflecting surface",
+      "principal axis with labeled focus (F) and centre of curvature (C)",
+      "object placed beyond C",
+      "at least two incident rays with arrows showing correct direction",
+      "reflected rays intersecting to form image between C and F",
+      "image labeled as real, inverted, and diminished"
+    ],
+    "keyword_list": [
+      "real",
+      "inverted",
+      "diminished"
+    ]
+  },
+  {
+    "q_no": "8",
+    "question_text": "Explain why the resistance of a metallic conductor increases with increase in temperature.",
+    "question_type": "short_answer",
+    "max_marks": 3,
+    "expected_answer": "Resistance of a metallic conductor increases with temperature because lattice vibrations increase, causing more frequent collisions between free electrons and ions, so electron flow is hindered.",
+    "marking_notes": "Marking: increase in lattice vibrations/collisions (2), conclusion about increased resistance (1).",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "lattice vibrations",
+      "collisions",
+      "free electrons",
+      "ions",
+      "hindered"
+    ]
+  },
+  {
+    "q_no": "9",
+    "question_text": "An electric heater draws a current of 5 A from a 220 V supply for 2 hours. Calculate (i) the power of the heater and (ii) the electrical energy consumed in kWh.",
+    "question_type": "numerical",
+    "max_marks": 3,
+    "expected_answer": "Given: I = 5 A, V = 220 V, t = 2 h.\n(i) Power, P = VI = 220 \u00d7 5 = 1100 W = 1.1 kW.\n(ii) Energy consumed = P \u00d7 t = 1.1 \u00d7 2 = 2.2 kWh.",
+    "marking_notes": "Marking: power calculation (1.5), energy calculation (1.5). Accept correct unit conversion.",
+    "diagram_checklist": null,
+    "keyword_list": null
+  },
+  {
+    "q_no": "10",
+    "question_text": "A student connects three resistors of 2 \u2126, 3 \u2126 and 5 \u2126 in series to a 10 V battery. (i) Find the total resistance. (ii) Calculate the current in the circuit. (iii) State one advantage of connecting resistors in series in such a case.",
+    "question_type": "long_answer",
+    "max_marks": 4,
+    "expected_answer": "(i) Total resistance, R = 2 + 3 + 5 = 10 \u2126.\n(ii) Current, I = V/R = 10/10 = 1 A.\n(iii) One advantage of series connection: same current flows through all resistors / simple to connect / total resistance increases.",
+    "marking_notes": "(i) Total resistance (1 mark). (ii) Current (2 marks: formula + correct answer). (iii) One advantage (1 mark).",
+    "diagram_checklist": null,
+    "keyword_list": [
+      "10",
+      "1 A",
+      "same current",
+      "simple to connect",
+      "total resistance increases"
+    ]
+  }
+]

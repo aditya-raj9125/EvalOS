@@ -1,0 +1,419 @@
+[
+  {
+    "sheet_name": "Aarav_PHY-001.pdf",
+    "roll_result": {
+      "roll_number": "PHY-001",
+      "student_name": "Aarav Sharma",
+      "subject": "Physics",
+      "class_section": "X - B",
+      "confidence": 1.0
+    },
+    "evaluations": [
+      {
+        "q_no": "1",
+        "page_number": 1,
+        "student_answer_transcribed": "Q1. Ohm's law states that at constant temperature, the current flowing through a conductor is directly proportional to the potential difference across its ends.\n\nMathematical form :- V \u221d I\n[Student drew a box around V = IR]",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "All key elements including constant temperature, direct proportionality, and correct mathematical form are present.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.08,
+          "y": 0.16,
+          "w": 0.84,
+          "h": 0.31
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "2",
+        "page_number": 1,
+        "student_answer_transcribed": "Q2. The SI unit of electric power is watt (W).",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correctly identifies the SI unit of electric power as watt (W).",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.08,
+          "y": 0.51,
+          "w": 0.84,
+          "h": 0.07
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "3",
+        "page_number": 1,
+        "student_answer_transcribed": "Q3. The device used to protect an electric circuit from overcurrent is fuse (or MCB).",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correctly identifies fuse and MCB as protective devices.",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.08,
+          "y": 0.6,
+          "w": 0.84,
+          "h": 0.13
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "4",
+        "page_number": 1,
+        "student_answer_transcribed": "Q4. The image formed by a plane mirror is virtual, erect and of the same size as the object.",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correctly states properties of the image (virtual, erect, same size).",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.08,
+          "y": 0.75,
+          "w": 0.84,
+          "h": 0.18
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "5",
+        "page_number": 2,
+        "student_answer_transcribed": "Copper and aluminium wires are used in electric wiring because :-\n(i) They are good conductors of electricity (low resistance).\n(ii) They are ductile and can be drawn into long wires.",
+        "awarded_marks": 2,
+        "max_marks": 2.0,
+        "verdict": "correct",
+        "reason": "Both reasons (good conductivity/low resistance and ductility) are correct and clearly stated.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.02,
+          "y": 0.09,
+          "w": 0.9,
+          "h": 0.23
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "6",
+        "page_number": 2,
+        "student_answer_transcribed": "Given, Power of bulb (P) = 60 W\nVoltage (V) = 220 V\nWe know, P = VI\nSo, I = P/V = 60/220\n= 0.273 A (approx).\n\u2234 Current drawn by the bulb = 0.273 A.",
+        "awarded_marks": 2,
+        "max_marks": 2.0,
+        "verdict": "correct",
+        "reason": "Correct formula used, proper substitution, and accurate calculation of current with unit.",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.02,
+          "y": 0.33,
+          "w": 0.9,
+          "h": 0.26
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "7",
+        "page_number": 2,
+        "student_answer_transcribed": "Ray diagram :-\n[Student drew a concave mirror with principal axis, object AB beyond C, and image A'B' between C and F. One ray is parallel and reflects through F. The second ray goes from A through the image to the mirror incorrectly.]\nProperty: The image is real, inverted and diminished in size.",
+        "awarded_marks": 1.5,
+        "max_marks": 2.0,
+        "verdict": "diagram_partial",
+        "reason": "Correct property stated. Ray diagram has incorrect ray tracing for the second ray, but layout is mostly correct.",
+        "ai_confidence": 0.9,
+        "bbox": {
+          "x": 0.02,
+          "y": 0.61,
+          "w": 0.9,
+          "h": 0.35
+        },
+        "is_diagram": true,
+        "diagram_elements_found": [
+          "concave mirror shown with reflecting surface",
+          "principal axis with labeled focus (F) and centre of curvature (C)",
+          "object placed beyond C",
+          "reflected rays intersecting to form image between C and F",
+          "image labeled as real, inverted, and diminished"
+        ],
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "8",
+        "page_number": 3,
+        "student_answer_transcribed": "When the temperature of a metallic conductor increases, the ions in the metal lattice start vibrating more vigorously. This increases the chances of collision between free electrons and ions. Due to more collisions, the flow of electrons is opposed more. Hence the resistance of the conductor increases with increase in temperature.",
+        "awarded_marks": 3,
+        "max_marks": 3.0,
+        "verdict": "correct",
+        "reason": "The student correctly explains that increased temperature causes more vigorous lattice vibrations, leading to more frequent collisions, hindering electron flow.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.02,
+          "y": 0.11,
+          "w": 0.93,
+          "h": 0.24
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "9",
+        "page_number": 3,
+        "student_answer_transcribed": "Given, I = 5 A, V = 220 V, t = 2 hours\n(i) Power of heater, P = VI = 220 x 5 = 1100 W\n(ii) Electrical energy consumed, E = Pt = 1100 x 2 h = 2200 Wh = 2.2 kWh",
+        "awarded_marks": 3,
+        "max_marks": 3.0,
+        "verdict": "correct",
+        "reason": "Both power (1100 W) and electrical energy consumed (2.2 kWh) are calculated correctly with appropriate steps and units.",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.02,
+          "y": 0.37,
+          "w": 0.93,
+          "h": 0.17
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      },
+      {
+        "q_no": "10",
+        "page_number": 3,
+        "student_answer_transcribed": "Given, R1 = 2 \u03a9, R2 = 3 \u03a9, R3 = 5 \u03a9, V = 10 V\n(i) Total resistance in series, R = R1 + R2 + R3 = 2 + 3 + 5 = 10 \u03a9\n(ii) Current in the circuit, I = V/R = 10/10 = 1 A\n(iii) Advantage: If one appliance stops working (breaks down), the others also stop. Hence it is safer.",
+        "awarded_marks": 3,
+        "max_marks": 4.0,
+        "verdict": "partial",
+        "reason": "Parts (i) and (ii) are correct. Part (iii) is incorrect as this is a disadvantage, not an advantage.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.02,
+          "y": 0.55,
+          "w": 0.95,
+          "h": 0.35
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Aarav_PHY-001.pdf"
+      }
+    ]
+  },
+  {
+    "sheet_name": "Riya_PHY-028.pdf",
+    "roll_result": {
+      "roll_number": "PHY- 028",
+      "student_name": "Riya Verma",
+      "subject": "Phy",
+      "class_section": "X - B",
+      "confidence": 0.95
+    },
+    "evaluations": [
+      {
+        "q_no": "1",
+        "page_number": 1,
+        "student_answer_transcribed": "Ohm's law\naccording to Ohm's law current is directly proportional to p.d. across the conductor at constant temp..\nI \u221d V\n[V = IR]",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correct statement of Ohm's law with constant temperature condition and correct mathematical form.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.04,
+          "y": 0.18,
+          "w": 0.88,
+          "h": 0.26
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "4",
+        "page_number": 1,
+        "student_answer_transcribed": "In plane mirror image is virtual, erect and same size as object.",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correctly states properties of the image formed by a plane mirror.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.04,
+          "y": 0.45,
+          "w": 0.88,
+          "h": 0.12
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "2",
+        "page_number": 1,
+        "student_answer_transcribed": "SI unit of Power is watt (W).",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correct SI unit of power stated.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.04,
+          "y": 0.58,
+          "w": 0.88,
+          "h": 0.11
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "7",
+        "page_number": 1,
+        "student_answer_transcribed": "Ray diagram -\n[Student drew a ray diagram of a concave mirror showing an object beyond C, with two incident rays reflecting to form a real, inverted, and diminished image between C and F]\nImage is real, inverted and smaller",
+        "awarded_marks": 2,
+        "max_marks": 2.0,
+        "verdict": "diagram_correct",
+        "reason": "Correct ray diagram with appropriate labels and arrows. Correct properties of the image are stated.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.04,
+          "y": 0.7,
+          "w": 0.88,
+          "h": 0.29
+        },
+        "is_diagram": true,
+        "diagram_elements_found": [
+          "concave mirror shown with reflecting surface",
+          "principal axis with labeled focus (F) and centre of curvature (C)",
+          "object placed beyond C",
+          "at least two incident rays with arrows showing correct direction",
+          "reflected rays intersecting to form image between C and F",
+          "image labeled as real, inverted, and diminished"
+        ],
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "6",
+        "page_number": 2,
+        "student_answer_transcribed": "Q6. P = 60 W , V = 220 V\nP = VI\n60 = 220 x I\nI = 60/220\n= 0.27 A approx.\nI = 0.27 A",
+        "awarded_marks": 2,
+        "max_marks": 2.0,
+        "verdict": "correct",
+        "reason": "Correct formula, substitution, and final calculation of current.",
+        "ai_confidence": 1.0,
+        "bbox": {
+          "x": 0.05,
+          "y": 0.05,
+          "w": 0.9,
+          "h": 0.35
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "5",
+        "page_number": 2,
+        "student_answer_transcribed": "Q5. copper and aluminium wires are used in electric wiring because\n(i) they are good conductors of electricity (low resistance).\n(iii) they are ductile and can be drawn into long wires.",
+        "awarded_marks": 2,
+        "max_marks": 2.0,
+        "verdict": "correct",
+        "reason": "Two correct reasons provided: good conductivity (low resistance) and ductility.",
+        "ai_confidence": 1.0,
+        "bbox": {
+          "x": 0.05,
+          "y": 0.4,
+          "w": 0.9,
+          "h": 0.38
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "3",
+        "page_number": 2,
+        "student_answer_transcribed": "Q3. Device used to protect circuit from overcurrent is fuse (or MCB).",
+        "awarded_marks": 1,
+        "max_marks": 1.0,
+        "verdict": "correct",
+        "reason": "Correctly identifies fuse and MCB as protective devices.",
+        "ai_confidence": 1.0,
+        "bbox": {
+          "x": 0.05,
+          "y": 0.8,
+          "w": 0.9,
+          "h": 0.15
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "9",
+        "page_number": 3,
+        "student_answer_transcribed": "Given I = 5 A , V = 220 V , t = 2 hr\n(i) Power , P = VI = 220 x 5 = 1100 W\n(ii) Energy , E = P x t = 1100 x 2 = 2200 Wh = 2.2 kWh",
+        "awarded_marks": 3,
+        "max_marks": 3.0,
+        "verdict": "correct",
+        "reason": "Both power and energy calculations are correct with appropriate units.",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.01,
+          "y": 0.07,
+          "w": 0.94,
+          "h": 0.24
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "8",
+        "page_number": 3,
+        "student_answer_transcribed": "When temp. increases, the ions in the metal vibrate more and more because of this collision between free electrons and ions increase so the flow of electrons opposes and resistance increases.",
+        "awarded_marks": 3,
+        "max_marks": 3.0,
+        "verdict": "correct",
+        "reason": "Correctly explains that increased temperature causes more lattice vibrations and collisions, hindering electron flow and increasing resistance.",
+        "ai_confidence": 0.95,
+        "bbox": {
+          "x": 0.01,
+          "y": 0.31,
+          "w": 0.97,
+          "h": 0.23
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      },
+      {
+        "q_no": "10",
+        "page_number": 3,
+        "student_answer_transcribed": "Given R1 = 2 \u03a9 , R2 = 3 \u03a9 , R3 = 5 \u03a9 , V = 10 V\n(i) Total resistance\nR = 2 + 3 + 5 = 10 \u03a9\n(ii) Current I = V/R = 10/10 = 1 A\n(iii) Advantage -> If one appliance stops working (breaks down) the others also stop.",
+        "awarded_marks": 3,
+        "max_marks": 4.0,
+        "verdict": "partial",
+        "reason": "Parts (i) and (ii) are correct. Part (iii) incorrectly states a disadvantage instead of an advantage.",
+        "ai_confidence": 0.98,
+        "bbox": {
+          "x": 0.01,
+          "y": 0.54,
+          "w": 0.97,
+          "h": 0.37
+        },
+        "is_diagram": false,
+        "diagram_elements_found": null,
+        "sheet": "Riya_PHY-028.pdf"
+      }
+    ]
+  }
+]

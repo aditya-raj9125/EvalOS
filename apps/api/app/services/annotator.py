@@ -56,30 +56,30 @@ def _load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default()
 
 
-def _draw_tick(draw: ImageDraw.Draw, x: int, y: int, size: int = 18) -> None:
+def _draw_tick(draw: ImageDraw.Draw, x: int, y: int, size: int = 40) -> None:
     """Draw a green checkmark tick at (x, y)."""
     # Tick: short line down-left then longer line up-right
-    draw.line([(x, y + size // 2), (x + size // 3, y + size)], fill=COLOR_GREEN, width=3)
-    draw.line([(x + size // 3, y + size), (x + size, y)], fill=COLOR_GREEN, width=3)
+    draw.line([(x, y + size // 2), (x + size // 3, y + size)], fill=COLOR_GREEN, width=6)
+    draw.line([(x + size // 3, y + size), (x + size, y)], fill=COLOR_GREEN, width=6)
 
 
-def _draw_cross(draw: ImageDraw.Draw, x: int, y: int, size: int = 18) -> None:
+def _draw_cross(draw: ImageDraw.Draw, x: int, y: int, size: int = 40) -> None:
     """Draw a red X cross at (x, y)."""
-    draw.line([(x, y), (x + size, y + size)], fill=COLOR_RED, width=3)
-    draw.line([(x + size, y), (x, y + size)], fill=COLOR_RED, width=3)
+    draw.line([(x, y), (x + size, y + size)], fill=COLOR_RED, width=6)
+    draw.line([(x + size, y), (x, y + size)], fill=COLOR_RED, width=6)
 
 
-def _draw_tilde(draw: ImageDraw.Draw, x: int, y: int, size: int = 18) -> None:
+def _draw_tilde(draw: ImageDraw.Draw, x: int, y: int, size: int = 40) -> None:
     """Draw an amber wavy tilde at (x, y) — approximated as two arcs."""
     mid_y = y + size // 2
-    draw.line([(x, mid_y), (x + size // 3, mid_y - 4), (x + size * 2 // 3, mid_y + 4), (x + size, mid_y)],
-              fill=COLOR_AMBER, width=3, joint="curve")
+    draw.line([(x, mid_y), (x + size // 3, mid_y - 6), (x + size * 2 // 3, mid_y + 6), (x + size, mid_y)],
+              fill=COLOR_AMBER, width=6, joint="curve")
 
 
-def _draw_dash(draw: ImageDraw.Draw, x: int, y: int, size: int = 18) -> None:
+def _draw_dash(draw: ImageDraw.Draw, x: int, y: int, size: int = 40) -> None:
     """Draw a gray dash for skipped questions."""
     mid_y = y + size // 2
-    draw.line([(x, mid_y), (x + size, mid_y)], fill=COLOR_GRAY, width=3)
+    draw.line([(x, mid_y), (x + size, mid_y)], fill=COLOR_GRAY, width=6)
 
 
 def _draw_text_with_bg(
@@ -89,7 +89,7 @@ def _draw_text_with_bg(
     y: int,
     font: ImageFont.FreeTypeFont,
     text_color: tuple,
-    padding: int = 3,
+    padding: int = 6,
 ) -> None:
     """Draw text with a white rounded rectangle background for readability."""
     bbox = draw.textbbox((x, y), text, font=font)
@@ -207,10 +207,10 @@ class AnnotationEngine:
         draw = ImageDraw.Draw(img)
         img_w, img_h = img.size
 
-        font_marks = _load_font(16, bold=True)
-        font_reason = _load_font(11)
-        font_flag = _load_font(11, bold=True)
-        font_summary = _load_font(14, bold=True)
+        font_marks = _load_font(32, bold=True)
+        font_reason = _load_font(20)
+        font_flag = _load_font(20, bold=True)
+        font_summary = _load_font(36, bold=True)
 
         page_awarded = 0.0
         page_max = 0.0
@@ -235,11 +235,11 @@ class AnnotationEngine:
             border_color = _get_border_color(verdict)
 
             # Draw bounding box border
-            draw.rectangle([bx, by, bx + bw, by + bh], outline=border_color, width=2)
+            draw.rectangle([bx, by, bx + bw, by + bh], outline=border_color, width=5)
 
             # Draw verdict mark at top-left corner of bbox
-            mark_x = bx + 4
-            mark_y = by + 4
+            mark_x = bx + 8
+            mark_y = by + 8
 
             if verdict in ("correct", "diagram_correct"):
                 _draw_tick(draw, mark_x, mark_y)
@@ -255,7 +255,7 @@ class AnnotationEngine:
                 marks_text = "0"
 
             # Draw marks text with white bg
-            _draw_text_with_bg(draw, marks_text, mark_x + 24, mark_y, font_marks, color)
+            _draw_text_with_bg(draw, marks_text, mark_x + 48, mark_y, font_marks, color)
 
             # Flagged indicator
             if ev.is_flagged:
@@ -273,13 +273,13 @@ class AnnotationEngine:
 
         # Draw summary box top-right corner
         summary_text = f"Total: {page_awarded:g}/{page_max:g}"
-        sb_w, sb_h = 180, 36
-        sb_x = img_w - sb_w - 12
-        sb_y = 10
+        sb_w, sb_h = 280, 60
+        sb_x = img_w - sb_w - 20
+        sb_y = 20
 
-        draw.rectangle([sb_x, sb_y, sb_x + sb_w, sb_y + sb_h], fill=COLOR_WHITE, outline=COLOR_BLUE, width=2)
+        draw.rectangle([sb_x, sb_y, sb_x + sb_w, sb_y + sb_h], fill=COLOR_WHITE, outline=COLOR_BLUE, width=5)
         draw.text(
-            (sb_x + 10, sb_y + 8),
+            (sb_x + 20, sb_y + 12),
             summary_text,
             fill=COLOR_DARK_NAVY,
             font=font_summary,
