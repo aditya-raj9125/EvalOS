@@ -86,7 +86,7 @@ export default function BatchDetailPage() {
     try {
       const [batchData, resultsData] = await Promise.all([
         batchesApi.get(batchId),
-        batchesApi.results(batchId, 1, 500),
+        batchesApi.results(batchId, 1, 200),
       ]);
       setBatch(apiBatchToBatch(batchData));
       setSheets(resultsData.data.map((s) => apiSheetToSheet(s)));
