@@ -51,42 +51,54 @@ class GeminiClient:
 
     def generate_text(self, prompt: str) -> str:
         """Send a text-only prompt to Gemini. Returns response text."""
-        try:
-            response = self.model.generate_content(prompt)
-            return response.text
-        except google_exceptions.ResourceExhausted as e:
-            logger.error("Gemini rate limit hit", error=str(e))
-            raise GeminiAPIError(f"Rate limit: {e}") from e
-        except google_exceptions.ServiceUnavailable as e:
-            logger.error("Gemini service unavailable", error=str(e))
-            raise GeminiAPIError(f"Service unavailable: {e}") from e
-        except google_exceptions.InvalidArgument as e:
-            logger.error("Gemini invalid argument", error=str(e))
-            raise GeminiAPIError(f"Invalid argument: {e}") from e
-        except Exception as e:
-            logger.error("Gemini unexpected error", error=str(e))
-            raise GeminiAPIError(str(e)) from e
+        import time
+        for attempt in range(5):
+            try:
+                response = self.model.generate_content(prompt)
+                return response.text
+            except google_exceptions.ResourceExhausted as e:
+                if attempt == 4:
+                    logger.error("Gemini rate limit hit permanently", error=str(e))
+                    raise GeminiAPIError(f"Rate limit: {e}") from e
+                wait_time = 10 * (2 ** attempt)
+                logger.warning(f"Gemini rate limit hit, retrying in {wait_time}s", error=str(e))
+                time.sleep(wait_time)
+            except google_exceptions.ServiceUnavailable as e:
+                logger.error("Gemini service unavailable", error=str(e))
+                raise GeminiAPIError(f"Service unavailable: {e}") from e
+            except google_exceptions.InvalidArgument as e:
+                logger.error("Gemini invalid argument", error=str(e))
+                raise GeminiAPIError(f"Invalid argument: {e}") from e
+            except Exception as e:
+                logger.error("Gemini unexpected error", error=str(e))
+                raise GeminiAPIError(str(e)) from e
 
     def generate_with_image(self, prompt: str, base64_image_string: str) -> str:
         """Send a prompt with an inline JPEG image. Returns response text."""
-        try:
-            image_bytes = base64.b64decode(base64_image_string)
-            image_part = {"mime_type": "image/jpeg", "data": image_bytes}
-            content_parts = [image_part, prompt]
-            response = self.model.generate_content(content_parts)
-            return response.text
-        except google_exceptions.ResourceExhausted as e:
-            logger.error("Gemini rate limit hit (vision)", error=str(e))
-            raise GeminiAPIError(f"Rate limit: {e}") from e
-        except google_exceptions.ServiceUnavailable as e:
-            logger.error("Gemini service unavailable (vision)", error=str(e))
-            raise GeminiAPIError(f"Service unavailable: {e}") from e
-        except google_exceptions.InvalidArgument as e:
-            logger.error("Gemini invalid argument (vision)", error=str(e))
-            raise GeminiAPIError(f"Invalid argument (image may be too large): {e}") from e
-        except Exception as e:
-            logger.error("Gemini vision unexpected error", error=str(e))
-            raise GeminiAPIError(str(e)) from e
+        import time
+        for attempt in range(5):
+            try:
+                image_bytes = base64.b64decode(base64_image_string)
+                image_part = {"mime_type": "image/jpeg", "data": image_bytes}
+                content_parts = [image_part, prompt]
+                response = self.model.generate_content(content_parts)
+                return response.text
+            except google_exceptions.ResourceExhausted as e:
+                if attempt == 4:
+                    logger.error("Gemini rate limit hit (vision) permanently", error=str(e))
+                    raise GeminiAPIError(f"Rate limit: {e}") from e
+                wait_time = 10 * (2 ** attempt)
+                logger.warning(f"Gemini rate limit hit (vision), retrying in {wait_time}s", error=str(e))
+                time.sleep(wait_time)
+            except google_exceptions.ServiceUnavailable as e:
+                logger.error("Gemini service unavailable (vision)", error=str(e))
+                raise GeminiAPIError(f"Service unavailable: {e}") from e
+            except google_exceptions.InvalidArgument as e:
+                logger.error("Gemini invalid argument (vision)", error=str(e))
+                raise GeminiAPIError(f"Invalid argument (image may be too large): {e}") from e
+            except Exception as e:
+                logger.error("Gemini vision unexpected error", error=str(e))
+                raise GeminiAPIError(str(e)) from e
 
     def generate_json(
         self, prompt: str, image: str | None = None

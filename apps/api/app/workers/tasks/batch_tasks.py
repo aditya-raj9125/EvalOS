@@ -54,9 +54,9 @@ def process_batch(self, batch_id: str) -> None:
 
         # Parse rubric first (blocking — sheets depend on it)
         if batch.rubric:
-            rubric_result = parse_rubric_task.apply_async(args=[batch.rubric.id])
             try:
-                rubric_result.get(timeout=120)
+                from app.services.rubric_parser import RubricParser
+                RubricParser().parse_rubric_sync(batch.rubric.id)
             except Exception as e:
                 logger.error("Rubric parsing failed", batch_id=batch_id, error=str(e))
                 batch.status = BatchStatus.failed
